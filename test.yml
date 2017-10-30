@@ -11,7 +11,7 @@ inputs:
 - name: esi-client.g8
 
 outputs:
-- name: demo-client
+- name: democlient
 
 run:
   path: /bin/bash
