@@ -1,7 +1,7 @@
 organization  := "$organization$"
 name := "$name;format="norm"$"
 version := "0.0.1-SNAPSHOT"
-scalaVersion = "$scala_version"
+scalaVersion = "$scala_version$"
 
 resolvers += Resolver.jcenterRepo
 
