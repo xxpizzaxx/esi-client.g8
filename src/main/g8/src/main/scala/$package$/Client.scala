@@ -36,7 +36,7 @@ object Client extends App {
   } yield (results)
   // and let's print them out nicely
   val statsText = statsRequest.unsafeRunSync.map{ case (stats, system, constellation, region) =>
-    s"${system.name} in ${constellation.name} in ${region.name} had ${stats.npc_kills} npc kills in the last hour"
+    s"\${system.name} in \${constellation.name} in \${region.name} had \${stats.npc_kills} npc kills in the last hour"
   }.mkString("\n")
   println(statsText)
 
