@@ -30,7 +30,7 @@ object Client extends App {
       for {
         system        <- esiClient.run(UniverseApi.getUniverseSystemsSystemId(stats.system_id)).map(_.right.get)
         constellation <- esiClient.run(UniverseApi.getUniverseConstellationsConstellationId(system.constellation_id)).map(_.right.get)
-        region        <-esiClient.run(UniverseApi.getUniverseRegionsRegionId(constellation.region_id)).map(_.right.get)
+        region        <- esiClient.run(UniverseApi.getUniverseRegionsRegionId(constellation.region_id)).map(_.right.get)
       } yield (stats, system, constellation, region)
     }.sequence
   } yield (results)
