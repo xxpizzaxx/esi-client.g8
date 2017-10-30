@@ -5,7 +5,7 @@ scalaVersion = "$scala_version$"
 
 resolvers += Resolver.jcenterRepo
 
-val esiClientVersion = "$esi_client_version"
+val esiClientVersion = "$esi_client_version$"
 
 libraryDependencies ++= Seq(
   "eveapi" %% "esi-client" % esiClientVersion
