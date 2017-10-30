@@ -10,4 +10,11 @@ cd ../esi-client.g8
 sed -i 's/^esi_client_version = .*i$/esi_client_version = $VERSION/g' src/main/g8/default.properties
 git config --global user.name "Concourse CI"
 git config --global user.email "ci@pizza.moe"
-git commit -m "bumping default version to $VERSION"
+
+if [ -z $(git status --porcelain) ];
+then
+    echo "No bump required"
+else
+    git commit -m "bumping default version to $VERSION"
+fi
+
