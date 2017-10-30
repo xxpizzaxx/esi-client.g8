@@ -20,8 +20,7 @@ object Client extends App {
   println(statusRequestIO.unsafeRunSync)
 
   // let's compose something more complex
-  // how about ratting data augmented with system names?
-
+  // how about the top 10 ratting systems augmented with their map data
   val statsRequest = for {
     // let's get the systems with the top 10 NPC kills in the last hour
     kills   <- esiClient.run(UniverseApi.getUniverseSystemKills()).map(_.right.get.sortBy(0 -_.npc_kills).take(10))
