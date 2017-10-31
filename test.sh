@@ -4,6 +4,7 @@ set -e
 VERSION="`cat esi-version/version`"
 sbt new file://./esi-client.g8 --name=democlient --organization=com.example --scala_version=2.11.8 --esi_client_version=$VERSION
 cd democlient
+echo "resolvers += \"pizza\" at \"http://dev.pizza.moe/repository/pizza/\"" >> build.sbt
 sbt compile
 echo "it worked! let's bump the default"
 cd ../esi-client.g8
